@@ -7,11 +7,13 @@
 document.getElementById('generateBtn').addEventListener('click', function () {
     let generateInput = document.getElementById('generateInput');
     let randomNum = Math.random() * 9999;
-    let roundNum = Math.round(randomNum)
+    //let roundNum = Math.round(randomNum);
 
     //majhe majhe 3ta number generate kore tai condition ta dewa hoyeche
-    if (roundNum > 999) {
-        generateInput.value = roundNum;
+    if (randomNum > 999) {
+        //parseInt korle fraction (dosomik) number show kore na
+        randomNum = parseInt(randomNum);
+        generateInput.value = randomNum;
     }
 })
 
