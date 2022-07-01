@@ -62,25 +62,36 @@ document.getElementById('BtnC').addEventListener('click', function () {
 
 document.getElementById('BtnLessthan').addEventListener('click', function () {
     let submitInput = document.getElementById('submitInput');
-    //submitInput.value = document.removeChild(submitInput.value);
+    submitInput.value = submitInput.value.substr(0, submitInput.value.length-1);
+    //substr = substring (remove kora)
+    //substr(jeta remove korte chacchi tar length (position), tar length nai (mane -1) kore dibe
 })
 
 
 
 //Submit Button
 submitBtn.addEventListener('click', function () {
+    
+    if (generateInput.value == "" && submitInput.value == "") {
+        document.getElementById('notifyMatch').style.display = 'none';
+        document.getElementById('notifyDontMatch').style.display = 'none';
+    }
 
-    if (generateInput.value == submitInput.value && generateInput.value != "") {
+    else if (generateInput.value == submitInput.value && generateInput.value != "") {
         document.getElementById('notifyMatch').style.display = 'block';
         document.getElementById('notifyDontMatch').style.display = 'none';
+    }
 
-    } else {
+    else {
         document.getElementById('notifyDontMatch').style.display = 'block';
         document.getElementById('notifyMatch').style.display = 'none';
     }
     
     let tryTime = parseInt((document.getElementById('tryTime').innerText));
-    document.getElementById('tryTime').innerText = tryTime - 1;
+
+    if (generateInput.value != submitInput.value && generateInput.value != "") {
+        document.getElementById('tryTime').innerText = tryTime - 1; 
+    }
 
     if (document.getElementById('tryTime').innerText == 0) {
         submitBtn.disabled = true;
