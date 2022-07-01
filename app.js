@@ -1,9 +1,3 @@
-//hide notice
-// const notifyDontMatch = document.getElementById('notifyDontMatch');
-// notifyDontMatch.style.display = 'none';
-// const notifyMatch = document.getElementById('notifyMatch');
-// notifyMatch.style.display = 'none';
-
 document.getElementById('generateBtn').addEventListener('click', function () {
     let generateInput = document.getElementById('generateInput');
     let randomNum = Math.random() * 9999;
@@ -62,22 +56,18 @@ document.getElementById('Btn9').addEventListener('click', function () {
     click('submitInput', 9);
 })
 
-//2nd Function
-function clickBtnC(id, BtnValue) {
-    document.getElementById(id).value = ""
-    document.getElementById(id).value = BtnNum;
-}
 document.getElementById('BtnC').addEventListener('click', function () {
-    clickBtnC('submitInput', "");
+    document.getElementById('submitInput').value = "";
+})
+
+document.getElementById('BtnLessthan').addEventListener('click', function () {
+    let submitInput = document.getElementById('submitInput');
+    //submitInput.value = document.removeChild(submitInput.value);
 })
 
 
-// document.getElementById('BtnLessthan').addEventListener('click', function () {
-//     click('submitInput', );
-// })
 
 //Submit Button
-let submitInput = document.getElementById('submitInput');
 let submitBtn = document.getElementById('submitBtn');
 
 submitBtn.addEventListener('click', function () {
