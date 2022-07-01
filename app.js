@@ -68,11 +68,9 @@ document.getElementById('BtnLessthan').addEventListener('click', function () {
 
 
 //Submit Button
-let submitBtn = document.getElementById('submitBtn');
-
 submitBtn.addEventListener('click', function () {
 
-    if (generateInput.value == submitInput.value) {
+    if (generateInput.value == submitInput.value && generateInput.value != "") {
         document.getElementById('notifyMatch').style.display = 'block';
         document.getElementById('notifyDontMatch').style.display = 'none';
 
@@ -81,4 +79,10 @@ submitBtn.addEventListener('click', function () {
         document.getElementById('notifyMatch').style.display = 'none';
     }
     
+    let tryTime = parseInt((document.getElementById('tryTime').innerText));
+    document.getElementById('tryTime').innerText = tryTime - 1;
+
+    if (document.getElementById('tryTime').innerText == 0) {
+        submitBtn.disabled = true;
+    }
 })
