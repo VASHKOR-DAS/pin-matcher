@@ -108,6 +108,6 @@ color: #E0B612;
 
 /* added for js */
 
-.notify-section{
+#notifyMatch, #notifyDontMatch{
     display: none;
 }

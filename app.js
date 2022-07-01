@@ -19,7 +19,7 @@ document.getElementById('generateBtn').addEventListener('click', function () {
 
 //Submit section
 function click(id, BtnNum) {
-    document.getElementById(id).value = BtnNum;
+    document.getElementById(id).value = document.getElementById(id).value + BtnNum;
 }
 
 document.getElementById('Btn0').addEventListener('click', function () {
@@ -60,4 +60,35 @@ document.getElementById('Btn8').addEventListener('click', function () {
 
 document.getElementById('Btn9').addEventListener('click', function () {
     click('submitInput', 9);
+})
+
+//2nd Function
+function clickBtnC(id, BtnValue) {
+    document.getElementById(id).value = ""
+    document.getElementById(id).value = BtnNum;
+}
+document.getElementById('BtnC').addEventListener('click', function () {
+    clickBtnC('submitInput', "");
+})
+
+
+// document.getElementById('BtnLessthan').addEventListener('click', function () {
+//     click('submitInput', );
+// })
+
+//Submit Button
+let submitInput = document.getElementById('submitInput');
+let submitBtn = document.getElementById('submitBtn');
+
+submitBtn.addEventListener('click', function () {
+
+    if (generateInput.value == submitInput.value) {
+        document.getElementById('notifyMatch').style.display = 'block';
+        document.getElementById('notifyDontMatch').style.display = 'none';
+
+    } else {
+        document.getElementById('notifyDontMatch').style.display = 'block';
+        document.getElementById('notifyMatch').style.display = 'none';
+    }
+    
 })
